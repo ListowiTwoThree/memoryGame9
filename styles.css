@@ -166,10 +166,13 @@
     box-sizing: border-box;
     margin: 2px;
 }
-    p {
+    .p {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+    .game-area button {
+        order: -1
+    }
 
 
 }
