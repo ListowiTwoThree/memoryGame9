@@ -159,4 +159,11 @@
     .main-son {
         width: 80%;
     }
+    .deck .deck-card {
+    width: 55px;
+    height: 120px;
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 2px;
+}
 }
