@@ -99,7 +99,7 @@
 /* Светлая тема */
 [data-bs-theme="light"] {
     background-color: #2e6b47; /* Запасной цвет */
-    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
+    background-image: url('/img/cardTab.jpg') !important; /* Текстура фетра */
     background-size: cover;
     background-position: center;
     color: #ffffff; /* Красный для текста, как в твоём оригинале */
@@ -107,7 +107,7 @@
 
 [data-bs-theme="light"] .main-main {
     background-color: #2e6b47; /* Запасной цвет */
-    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
+    background-image: url('/img/cardTab.jpg' !important); /* Текстура фетра */
     background-size: cover;
     background-position: center;
     color: #ffffff; /* Красный для текста, как в твоём оригинале */
