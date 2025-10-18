@@ -160,6 +160,7 @@
         width: 80%;
     }
     .deck .deck-card {
+    justify-content: normal;
     width: 45px;
     height: 120px;
     padding: 0px;
