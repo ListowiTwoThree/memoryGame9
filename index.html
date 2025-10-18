@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>memoryGame</title>
+    <style type="text/css">@font-face {font-family:Bangers;font-style:normal;font-weight:400;src:url(/cf-fonts/s/bangers/5.0.18/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Bangers;font-style:normal;font-weight:400;src:url(/cf-fonts/s/bangers/5.0.18/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Bangers;font-style:normal;font-weight:400;src:url(/cf-fonts/s/bangers/5.0.18/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-main">
+        <div class="main-son">
+            <h1 class="display-1 mb-5">memoryGame</h1>
+            <div class="theme-toggle mb-4">
+                <div class="text-center mb-2">Тема</div>
+                <div class="btn-group" role="group" aria-label="Выбор темы">
+                    <input type="radio" class="btn-check" name="theme" id="themeLight" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="themeLight">Светлая</label>
+                    <input type="radio" class="btn-check" name="theme" id="themeDark" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="themeDark">Тёмная</label>
+                </div>
+            </div>
+            <button class="btn btn-success w-100 mb-4" style="max-width: 500px;" id="startGame">Начать</button>
+            <!-- <a href="game.html" class="btn btn-success w-100 mb-4" style="max-width: 500px;" id="startGame">Начать</a> -->
+            <div class="options-group">
+                <div class="text-center mb-2">Колода</div>
+                <div class="btn-group mb-4" role="group" aria-label="Выбор колоды">
+                    <input type="radio" class="btn-check" name="deckSize" id="deck32" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="deck32">32</label>
+                    <input type="radio" class="btn-check" name="deckSize" id="deck52" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="deck52">52</label>
+                </div>
+                <div class="text-center mb-2">Время</div>
+                <div class="btn-group" role="group" aria-label="Выбор времени">
+                    <input type="radio" class="btn-check" name="time" id="time5" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="time5">5</label>
+                    <input type="radio" class="btn-check" name="time" id="time10" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="time10">10</label>
+                    <input type="radio" class="btn-check" name="time" id="time15" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="time15">15</label>
+                    <input type="radio" class="btn-check" name="time" id="time30" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="time30">30</label>
+                    <input type="radio" class="btn-check" name="time" id="timeStop" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="timeStop">stop</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

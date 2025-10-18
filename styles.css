@@ -1,0 +1,162 @@
+/* Основные стили */
+.main-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-son {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.options-group, .theme-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.btn-group {
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-group .btn {
+    flex: 1;
+    min-width: 60px;
+}
+
+.text-center {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Стили для заголовка */
+.display-1 {
+    font-family: 'Bangers', sans-serif;
+    font-size: 4.5rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.display-1::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 15px;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Тёмная тема */
+[data-bs-theme="dark"] {
+    background-color: #1a2525 !important; /* Тёмно-зелёный, почти чёрный */ 
+}
+
+[data-bs-theme="dark"] .main-main {
+    color: #ffffff !important; /* Золотой для текста */
+}
+
+[data-bs-theme="dark"] .text-center {
+    color: white !important;
+}
+
+[data-bs-theme="dark"] .display-1 {
+    color: #ffffff !important;
+    background: linear-gradient(45deg, #ffffff, #ffffff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+[data-bs-theme="dark"] .display-1::before {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid #ffffff !important;
+}
+
+/* Светлая тема */
+[data-bs-theme="light"] {
+    background-color: #2e6b47; /* Запасной цвет */
+    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff; /* Красный для текста, как в твоём оригинале */
+}
+
+[data-bs-theme="light"] .main-main {
+    background-color: #2e6b47; /* Запасной цвет */
+    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff; /* Красный для текста, как в твоём оригинале */
+}
+
+[data-bs-theme="light"] .text-center {
+    color: #ffffff; /* Тёмно-серый для надписей */
+}
+
+[data-bs-theme="light"] .display-1 {
+    color: #ffffff;
+    background: linear-gradient(45deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-bs-theme="light"] .display-1::before {
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px solid #ffffff;
+}
+
+[data-bs-theme="light"] .backcol {
+    background-color: #2e6b47; /* Запасной цвет */
+    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Адаптивность */
+@media (max-width: 576px) {
+    .btn-group .btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .text-center {
+        font-size: 1rem;
+    }
+    .display-1 {
+        font-size: 2.5rem;
+        padding: 8px 16px;
+    }
+    .display-1::before {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+    }
+    .main-son {
+        width: 80%;
+    }
+}
