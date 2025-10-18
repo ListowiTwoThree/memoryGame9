@@ -138,7 +138,7 @@
 
 
 /* Адаптивность */
-@media (max-width: 576px) {
+@media (max-width: 431px) {
     .btn-group .btn {
         font-size: 0.9rem;
         padding: 8px;
