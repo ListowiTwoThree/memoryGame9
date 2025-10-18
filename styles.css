@@ -166,4 +166,10 @@
     box-sizing: border-box;
     margin: 2px;
 }
+    p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
 }
