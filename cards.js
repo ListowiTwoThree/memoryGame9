@@ -8,9 +8,9 @@ const cards = [
     { name: 'Бубна 8', suit: 'diamonds', value: '8', description: 'Карта бубен 8', image_url: './img/8_of_diamonds.png' },
     { name: 'Бубна 9', suit: 'diamonds', value: '9', description: 'Карта бубен 9', image_url: './img/9_of_diamonds.png' },
     { name: 'Бубна 10', suit: 'diamonds', value: '10', description: 'Карта бубен 10', image_url: './img/10_of_diamonds.png' },
-    { name: 'Бубна Валет', suit: 'diamonds', value: 'J', description: 'Карта бубен Валет', image_url: './img/jack_of_diamonds.png' },
-    { name: 'Бубна Дама', suit: 'diamonds', value: 'Q', description: 'Карта бубен Дама', image_url: './img/queen_of_diamonds.png' },
-    { name: 'Бубна Король', suit: 'diamonds', value: 'K', description: 'Карта бубен Король', image_url: './img/king_of_diamonds.png' },
+    { name: 'Бубна Валет', suit: 'diamonds', value: 'J', description: 'Карта бубен Валет', image_url: './img/jack_of_diamonds2.png' },
+    { name: 'Бубна Дама', suit: 'diamonds', value: 'Q', description: 'Карта бубен Дама', image_url: './img/queen_of_diamonds2.png' },
+    { name: 'Бубна Король', suit: 'diamonds', value: 'K', description: 'Карта бубен Король', image_url: './img/king_of_diamonds2.png' },
     { name: 'Бубна Туз', suit: 'diamonds', value: 'A', description: 'Карта бубен Туз', image_url: './img/ace_of_diamonds.png' },
 
     { name: 'Черви 2', suit: 'hearts', value: '2', description: 'Карта черви 2', image_url: './img/2_of_hearts.png' },
@@ -22,9 +22,9 @@ const cards = [
     { name: 'Черви 8', suit: 'hearts', value: '8', description: 'Карта черви 8', image_url: './img/8_of_hearts.png' },
     { name: 'Черви 9', suit: 'hearts', value: '9', description: 'Карта черви 9', image_url: './img/9_of_hearts.png' },
     { name: 'Черви 10', suit: 'hearts', value: '10', description: 'Карта черви 10', image_url: './img/10_of_hearts.png' },
-    { name: 'Черви Валет', suit: 'hearts', value: 'J', description: 'Карта черви Валет', image_url: './img/jack_of_hearts.png' },
-    { name: 'Черви Дама', suit: 'hearts', value: 'Q', description: 'Карта черви Дама', image_url: './img/queen_of_hearts.png' },
-    { name: 'Черви Король', suit: 'hearts', value: 'K', description: 'Карта черви Король', image_url: './img/king_of_hearts.png' },
+    { name: 'Черви Валет', suit: 'hearts', value: 'J', description: 'Карта черви Валет', image_url: './img/jack_of_hearts2.png' },
+    { name: 'Черви Дама', suit: 'hearts', value: 'Q', description: 'Карта черви Дама', image_url: './img/queen_of_hearts2.png' },
+    { name: 'Черви Король', suit: 'hearts', value: 'K', description: 'Карта черви Король', image_url: './img/king_of_hearts2.png' },
     { name: 'Черви Туз', suit: 'hearts', value: 'A', description: 'Карта черви Туз', image_url: './img/ace_of_hearts.png' },
 
     { name: 'Трефы 2', suit: 'clubs', value: '2', description: 'Карта трефы 2', image_url: './img/2_of_clubs.png' },
@@ -36,9 +36,9 @@ const cards = [
     { name: 'Трефы 8', suit: 'clubs', value: '8', description: 'Карта трефы 8', image_url: './img/8_of_clubs.png' },
     { name: 'Трефы 9', suit: 'clubs', value: '9', description: 'Карта трефы 9', image_url: './img/9_of_clubs.png' },
     { name: 'Трефы 10', suit: 'clubs', value: '10', description: 'Карта трефы 10', image_url: './img/10_of_clubs.png' },
-    { name: 'Трефы Валет', suit: 'clubs', value: 'J', description: 'Карта трефы Валет', image_url: './img/jack_of_clubs.png' },
-    { name: 'Трефы Дама', suit: 'clubs', value: 'Q', description: 'Карта трефы Дама', image_url: './img/queen_of_clubs.png' },
-    { name: 'Трефы Король', suit: 'clubs', value: 'K', description: 'Карта трефы Король', image_url: './img/king_of_clubs.png' },
+    { name: 'Трефы Валет', suit: 'clubs', value: 'J', description: 'Карта трефы Валет', image_url: './img/jack_of_clubs2.png' },
+    { name: 'Трефы Дама', suit: 'clubs', value: 'Q', description: 'Карта трефы Дама', image_url: './img/queen_of_clubs2.png' },
+    { name: 'Трефы Король', suit: 'clubs', value: 'K', description: 'Карта трефы Король', image_url: './img/king_of_clubs2.png' },
     { name: 'Трефы Туз', suit: 'clubs', value: 'A', description: 'Карта трефы Туз', image_url: './img/ace_of_clubs.png' },
 
     { name: 'Пики 2', suit: 'spades', value: '2', description: 'Карта пики 2', image_url: './img/2_of_spades.png' },
@@ -50,8 +50,8 @@ const cards = [
     { name: 'Пики 8', suit: 'spades', value: '8', description: 'Карта пики 8', image_url: './img/8_of_spades.png' },
     { name: 'Пики 9', suit: 'spades', value: '9', description: 'Карта пики 9', image_url: './img/9_of_spades.png' },
     { name: 'Пики 10', suit: 'spades', value: '10', description: 'Карта пики 10', image_url: './img/10_of_spades.png' },
-    { name: 'Пики Валет', suit: 'spades', value: 'J', description: 'Карта пики Валет', image_url: './img/jack_of_spades.png' },
-    { name: 'Пики Дама', suit: 'spades', value: 'Q', description: 'Карта пики Дама', image_url: './img/queen_of_spades.png' },
-    { name: 'Пики Король', suit: 'spades', value: 'K', description: 'Карта пики Король', image_url: './img/king_of_spades.png' },
-    { name: 'Пики Туз', suit: 'spades', value: 'A', description: 'Карта пики Туз', image_url: './img/ace_of_spades.png' }
+    { name: 'Пики Валет', suit: 'spades', value: 'J', description: 'Карта пики Валет', image_url: './img/jack_of_spades2.png' },
+    { name: 'Пики Дама', suit: 'spades', value: 'Q', description: 'Карта пики Дама', image_url: './img/queen_of_spades2.png' },
+    { name: 'Пики Король', suit: 'spades', value: 'K', description: 'Карта пики Король', image_url: './img/king_of_spades2.png' },
+    { name: 'Пики Туз', suit: 'spades', value: 'A', description: 'Карта пики Туз', image_url: './img/ace_of_spades2.png' }
 ];
