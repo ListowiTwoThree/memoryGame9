@@ -11,14 +11,19 @@
     <script src="cards.js"></script>
 </head>
 <body class="backcol">
-    <div id=""></div>
-<div class="game-area" >
-        <div id="score" class="score text-center">Правильные: 0 | Неправильные: 0</div>
-        <p class="text-center">Нажмите кнопку, чтобы выбрать новые карты. Карты переворачиваются через 60 секунд.</p>
+    <div class="game-area">
+        <!-- Счётчик и кнопка теперь вместе вверху -->
+        <div class="top-controls d-flex justify-content-center align-items-center flex-wrap gap-3 px-3 pt-3">
+            <div id="score" class="score text-center fw-bold">Правильные: 0 | Неправильные: 0</div>
+            <button onclick="checkGuess()" class="btn btn-success">Выбрать карты</button>
+        </div>
+
+        <!-- Подсказка полностью убрана -->
+        
         <div class="card-container" id="cards"></div>
         <div class="deck" id="deck"></div>
-        <button onclick="checkGuess()">Выбрать карты</button>
-</div>
+    </div>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const timeParam = urlParams.get('time') || '5';
@@ -28,34 +33,27 @@
         const mode = urlParams.get('mode') || 'medium';
         const allowedValues = ['7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-        // Обновляем текст в <p> с выбранным временем
-    document.querySelector('p.text-center').innerText = `Нажмите кнопку, чтобы выбрать новые карты. Карты переворачиваются через ${timeoutSeconds} секунд.`;
-
         let correct = 0;
         let incorrect = 0;
-        let hiddenCards = []; // Показанные карты
-        let selectedCards = []; // Выбранные из колоды
+        let hiddenCards = []; 
+        let selectedCards = []; 
 
         function drawCards() {
-            // Обновляем счетчик
             document.getElementById('score').innerText = `Правильные: ${correct} | Неправильные: ${incorrect}`;
 
-            // Сбрасываем выбор
             selectedCards = [];
             const deck = document.getElementById('deck');
             deck.innerHTML = '';
 
-            // Фильтруем карты для режима 32 или используем все для 52
             const currentCards = deckSize === 32 ? cards.filter(card => allowedValues.includes(card.value)) : [...cards];
             const deckCards = [...currentCards];
             hiddenCards = [];
             for (let i = 0; i < 3; i++) {
                 const randomIndex = Math.floor(Math.random() * deckCards.length);
                 hiddenCards.push(deckCards[randomIndex]);
-                deckCards.splice(randomIndex, 1); // Удаляем, чтобы не повторялись
+                deckCards.splice(randomIndex, 1);
             }
 
-            // Отображаем 3 карты
             const container = document.getElementById('cards');
             container.innerHTML = '';
             hiddenCards.forEach(card => {
@@ -74,38 +72,30 @@
                 container.appendChild(cardElem);
             });
 
-            // Создаем колоду из отфильтрованных карт с кликом
             currentCards.forEach(card => {
                 const cardElem = document.createElement('div');
                 cardElem.className = 'deck-card';
-                cardElem.innerHTML = `
-                    <img src="${card.image_url}" alt="${card.name}">
-                `;
+                cardElem.innerHTML = `<img src="${card.image_url}" alt="${card.name}">`;
                 cardElem.onclick = () => toggleSelect(cardElem, card);
                 deck.appendChild(cardElem);
             });
 
-            // Переворачиваем карты через timeoutMs
             setTimeout(() => {
-                const cardsElems = document.querySelectorAll('.card');
-                cardsElems.forEach(card => card.classList.add('flipped'));
+                document.querySelectorAll('.card').forEach(card => card.classList.add('flipped'));
             }, timeoutMs);
         }
 
         function toggleSelect(elem, card) {
             if (selectedCards.includes(card)) {
-                // Снимаем выбор
                 elem.classList.remove('selected');
                 selectedCards = selectedCards.filter(c => c !== card);
             } else if (selectedCards.length < 3) {
-                // Добавляем выбор
                 elem.classList.add('selected');
                 selectedCards.push(card);
             }
         }
 
         function checkGuess() {
-            // Проверяем, выбрано ли ровно 3 карты
             if (selectedCards.length !== 3) {
                 alert('Выберите ровно 3 карты из колоды!');
                 return;
@@ -114,21 +104,14 @@
             let match = false;
 
             if (mode === 'easy') {
-                // Только цифры (values), без учета порядка
                 const hiddenValues = hiddenCards.map(c => c.value).sort();
                 const selectedValues = selectedCards.map(c => c.value).sort();
-                if (JSON.stringify(hiddenValues) === JSON.stringify(selectedValues)) {
-                    match = true;
-                }
+                match = JSON.stringify(hiddenValues) === JSON.stringify(selectedValues);
             } else if (mode === 'medium') {
-                // Цифра и масть (full name), без учета порядка
                 const hiddenNames = hiddenCards.map(c => c.name).sort();
                 const selectedNames = selectedCards.map(c => c.name).sort();
-                if (JSON.stringify(hiddenNames) === JSON.stringify(selectedNames)) {
-                    match = true;
-                }
+                match = JSON.stringify(hiddenNames) === JSON.stringify(selectedNames);
             } else if (mode === 'hard') {
-                // Цифра и масть (full name), с учетом последовательности (порядка выбора)
                 match = true;
                 for (let i = 0; i < 3; i++) {
                     if (hiddenCards[i].name !== selectedCards[i].name) {
@@ -138,23 +121,17 @@
                 }
             }
 
-            if (match) {
-                correct++;
-            } else {
-                incorrect++;
-            }
+            if (match) correct++; else incorrect++;
 
-            // Сбрасываем выбор и начинаем новую игру
-            const deckCards = document.querySelectorAll('.deck-card');
-            deckCards.forEach(card => card.classList.remove('selected'));
-
+            document.querySelectorAll('.deck-card').forEach(card => card.classList.remove('selected'));
             drawCards();
         }
 
-        // Автоматический запуск при загрузке
         drawCards();
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
-<script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+    <script src="script.js"></script>
 </body>
 </html>
+</DOCUMENT>
