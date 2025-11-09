@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -20,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('startGame').addEventListener('click', () => {
             const deck = document.querySelector('input[name="deckSize"]:checked').id.replace('deck', '');
             const time = document.querySelector('input[name="time"]:checked').id.replace('time', '');
-            window.location.href = `game.html?deck=${deck}&time=${time}`;
+            const mode = document.querySelector('input[name="mode"]:checked').id.replace('mode', '').toLowerCase();
+            window.location.href = `game.html?deck=${deck}&time=${time}&mode=${mode}`;
         });
     }
     
