@@ -99,7 +99,7 @@
 /* Светлая тема */
 [data-bs-theme="light"] {
     background-color: #2e6b47; /* Запасной цвет */
-    background-image: url('img/cardTab.jpg') !important; /* Текстура фетра */
+    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
     background-size: cover;
     background-position: center;
     color: #ffffff; /* Красный для текста, как в твоём оригинале */
@@ -107,7 +107,7 @@
 
 [data-bs-theme="light"] .main-main {
     background-color: #2e6b47; /* Запасной цвет */
-    background-image: url('img/cardTab.jpg' !important); /* Текстура фетра */
+    background-image: url('/img/cardTab.jpg'); /* Текстура фетра */
     background-size: cover;
     background-position: center;
     color: #ffffff; /* Красный для текста, как в твоём оригинале */
@@ -138,7 +138,7 @@
 
 
 /* Адаптивность */
-@media (max-width: 395px) {
+@media (max-width: 576px) {
     .btn-group .btn {
         font-size: 0.9rem;
         padding: 8px;
@@ -158,25 +158,5 @@
     }
     .main-son {
         width: 80%;
-    }
-    .deck .deck-card {
-    width: 45px;
-    height: 120px;
-    padding: 0px;
-    box-sizing: border-box;
-    margin: 2px;
-}
-    .p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-    .game-area button {
-        order: -1;
-    }
-    .displayNone {
-        display: none;
-    }
-    .deck {
-    justify-content: normal !important;
     }
 }
