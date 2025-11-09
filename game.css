@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif; 
     text-align: center; 
     padding: 20px; 
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 .card-container { 
     display: flex; 
@@ -33,11 +36,11 @@ body {
     justify-content: center; 
 }
 .card-back img { 
-    width: 70px; 
+    width: 100%; 
     height: auto; 
 }
 .card-front img { 
-    width: 70px; 
+    width: 100%; 
     height: auto; 
 }
 .card-name { 
@@ -58,22 +61,25 @@ button {
     cursor: pointer; 
 }
 .deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 5px;
     margin-top: 20px;
     width: 100%;
-    max-width: 1050px; /* 13 карт по 80px с небольшими отступами */
+    max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
+    flex-grow: 1;
+    align-content: start;
 }
 .deck .deck-card {
     padding: 4px;
-
+    aspect-ratio: 2 / 3;
 }
 .deck .deck-card img {
-    width: 60px;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     margin: 0 auto;
 }
 .deck-card .card-name { 
@@ -117,18 +123,16 @@ button {
 
 /* Уточняем стили для колоды */
 .deck .deck-card {
-    width: 80px;
-    height: 120px;
+    width: auto;
+    height: auto;
     padding: 4px;
     box-sizing: border-box;
-    margin: 2px; /* Небольшой отступ для равномерности */
+    margin: 0; /* Небольшой отступ для равномерности */
 }
 
 /* Уточняем стили для изображений в картах */
 .card-container .card img,
 .deck .deck-card img {
-    width: 70px;
-    height: auto;
     margin: 0 auto;
 }
 
@@ -140,15 +144,58 @@ button {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Уточняем стили для карт, чтобы размеры соответствовали изображению */
 .card-container .card {
+    aspect-ratio: 2 / 3;
     width: 70px; /* Соответствует ширине изображения */
-    height: 105px; /* Высота пропорциональна изображению (70px * 1.5, стандартное соотношение карт) */
     perspective: 1000px;
     margin: 0; /* Убираем отступы */
     padding: 0; /* Убираем внутренние отступы */
     --bs-card-bg: transparent !important; /* Устанавливаем прозрачный фон */
     --bs-card-border-color: transparent !important; /* Устанавливаем прозрачный фон */
+}
+
+/* Адаптивность для мобильных устройств, например iPhone 13 */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    .card-container {
+        gap: 10px;
+    }
+
+    .card-container .card {
+        width: 50px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .score {
+        font-size: 14px;
+        top: 5px;
+        right: 5px;
+    }
+
+    p.text-center {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .deck {
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        gap: 4px;
+        max-width: 100%;
+    }
+
+    .deck .deck-card {
+        padding: 2px;
+    }
 }
